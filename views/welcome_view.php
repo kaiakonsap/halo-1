@@ -1,3 +1,4 @@
+//todo!
 <ul>
 	<li>1. Asenda .htaccess failis RewriteBase real string /halo/ enda projekti kataloogi nimega.</li>
 	<li>2. Rename welcome controller enda põhikontrolleri nimeliseks (ära unusta classi nime muuta).</li>
