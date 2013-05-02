@@ -29,7 +29,7 @@
 
 	<style>
 		body {
-			padding-top: 60px;
+			padding-top: 120px;
 		}
 		body, html {
 			background: url('<?=BASE_URL?>assets/img/iostexture.png');
@@ -49,8 +49,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">Projekti nimi</a>
-			<div class="nav-collapse collapse">
+
+			<a href="<?=BASE_URL?>producs"><img src= "<?=ASSETS_URL?>img/rblogo-header.png"/></a>
+
+				<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="<?=BASE_URL?>tests">Esimene leht</a></li>
 					<li><a href="#about">Info</a></li>
