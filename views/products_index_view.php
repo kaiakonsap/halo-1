@@ -2,11 +2,12 @@
 	<div class="container_16">
 		<div class="grid_16 spotlight">
 			<div id="slider" class="grid_16 alpha">
-				<div class="anythingSlider anythingSlider-default activeSlider" style="width: 940px; height: 280px;">
+				<div class="anythingSlider anythingSlider-default activeSlider"
+				     style="width: 940px; height: 280px; display: block; overflow: hidden;">
 					<div class="anythingWindow">
-						<ul id="prduslider" class="anythingBase" style="width: 5640px; left: -940px;">
+						<ul id="prduslider" class="anythingBase" style="width: 5640px; left: -4698.351643847267px;">
 							<li class="cloned panel" style="width: 940px; height: 280px;">
-								<div class="img"><img src="./RouterBoard.com   Products_files/mtlogo-spot.png" alt="" width="270"
+								<div class="img"><img src="<?= ASSETS_URL ?>img/mtlogo-spot.png" alt="" width="270"
 								                      height="259"></div>
 								<div class="txt"><h1>RouterBOARD</h1>
 
@@ -19,8 +20,8 @@
 											href="http://routerboard.com/about" disabled="disabled">Learn more about MikroTik</a></span>
 								</div>
 							</li>
-							<li class="panel activePage" style="width: 940px; height: 280px;">
-								<div class="img"><img src="<? ASSETS_URL ?>img/spot_ccr103612G.png" alt=""
+							<li class="panel" style="width: 940px; height: 280px;">
+								<div class="img"><img src="<?=ASSETS_URL?>img/spot_ccr103612G.png" alt=""
 								                      width="270" height="270"></div>
 								<div class="txt"><h1>CCR1036</h1>
 
@@ -32,7 +33,7 @@
 											href="http://routerboard.com/CCR1036-12G-4S">Read More</a></span></div>
 							</li>
 							<li class="panel" style="width: 940px; height: 280px;">
-								<div class="img"><img src="./RouterBoard.com   Products_files/sxt-spot.png" alt="" width="270"
+								<div class="img"><img src="<?=ASSETS_URL?>img/sxt-spot.png" alt="" width="270"
 								                      height="310"></div>
 								<div class="txt"><h1>RouterBOARD SXT Lite5</h1>
 
@@ -44,7 +45,7 @@
 									<span class="readmore"><a href="http://routerboard.com/RBSXT-5nDr2">Read More</a></span></div>
 							</li>
 							<li class="panel" style="width: 940px; height: 280px;">
-								<div class="img"><img src="./RouterBoard.com   Products_files/spot_RB2011UAS2HnDIN.png" alt=""
+								<div class="img"><img src="<?=ASSETS_URL?>img/spot_RB2011UAS2HnDIN.png" alt=""
 								                      width="270" height="270"></div>
 								<div class="txt"><h1>RouterBOARD 2011</h1>
 
@@ -56,8 +57,8 @@
 										features supported by RouterOS.</p>          <span class="readmore"><a
 											href="http://routerboard.com/RB2011UAS-2HnD-IN">Read More</a></span></div>
 							</li>
-							<li class="panel" style="width: 940px; height: 280px;">
-								<div class="img"><img src="./RouterBoard.com   Products_files/mtlogo-spot.png" alt="" width="270"
+							<li class="panel activePage" style="width: 940px; height: 280px;">
+								<div class="img"><img src="<?=ASSETS_URL?>img/mtlogo-spot.png" alt="" width="270"
 								                      height="259"></div>
 								<div class="txt"><h1>RouterBOARD</h1>
 
@@ -70,7 +71,7 @@
 											href="http://routerboard.com/about">Learn more about MikroTik</a></span></div>
 							</li>
 							<li class="cloned panel" style="width: 940px; height: 280px;">
-								<div class="img"><img src="./RouterBoard.com   Products_files/spot_ccr103612G.png" alt=""
+								<div class="img"><img src="<?=ASSETS_URL?>img/spot_ccr103612G.png" alt=""
 								                      width="270" height="270"></div>
 								<div class="txt"><h1>CCR1036</h1>
 
@@ -87,12 +88,8 @@
 					<div class="anythingControls" style="">
 						<ul class="thumbNav" style=""></ul>
 					</div>
-
-
-					<span class="arrow back" style=""><a
-							href="<? ASSETS_URL ?>css/rb_style.min.css"><span>«</span></a></span><span
-						class="arrow forward" style=""><a href="<? ASSETS_URL ?>css/rb_style.min.css"><span>»</span></a></span>
-				</div>
+					<span class="arrow back" style=""><a href="<?= BASE_URL ?>products#"><span>«</span></a></span><span
+						class="arrow forward" style=""><a href="<?= BASE_URL ?>products#"><span>»</span></a></span></div>
 			</div>
 		</div>
 	</div>
@@ -102,25 +99,23 @@
 <div class="grid_16">
 <nav class="grid_5 alpha"><!-- left menu here -->
 <div class="column" id="left"><!-- filtru miskaste -->
-<form action="http://routerboard.com/#" method="get" id="hidden_form"><input type="hidden" name="group_id" id="group_id"
-                                                                             value=""></form>
+<form action="http://routerboard.com/products#" method="get" id="hidden_form"><input type="hidden" name="group_id"
+                                                                                     id="group_id" value=""></form>
 <h2>Product group</h2>
 
 <p><em style="color: #888; font-size: 0.9em">Filter the products by group, and then by their specifications</em></p>
 
 <div>
-<form id="groupSelector" action="http://routerboard.com/#">
+<form id="groupSelector" action="http://routerboard.com/products#">
 <fieldset style="border:none">
-	<? if (! empty($groups)): foreach ($groups as $group): ?>
-		<div class="filter_item"><input name="group_id" id="group_id_<? $group['group_id'] ?>" type="radio"
-		                                value="<? $group['group_id'] ?>"
-		                                onclick="setProductGroup(&#39;15&#39;)"
-		                                class="ui-helper-hidden-accessible"><span class="ui-radio"></span><label
-				style="display:none;" for="group_id_<? $group['group_id'] ?>">15</label><?= $group['group_name'] ?>
-		</div>
-	<?endforeach;
-	endif?>
+	<? if (!empty($groups)): foreach ($groups as $group):?>
+	<div class="filter_item"><input name="group_id" id="group_id_<?=$group['group_id']?>" type="radio" value="<?=$group['group_id']?>"
 
+	                                class="ui-helper-hidden-accessible"><span onclick="setProductGroup
+			('<?=$group['group_id']?>')" class="ui-radio"></span><label
+			style="display:none;" for="group_id_<?=$group['group_id']?>"><?=$group['group_id']?></label><?=$group['group_name']?>
+	</div>
+	<? endforeach; endif?>
 </fieldset>
 <input type="hidden" value="512" id="maxRAM" name="maxRAM"> <input type="hidden" value="5" id="miniPCI"
                                                                    name="miniPCI"> <input type="hidden"
@@ -138,8 +133,8 @@
 		<div id="slider-range_price"
 		     class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -153,8 +148,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_CPU_speed">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -165,8 +160,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_RAM">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -178,8 +173,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_MiniPCI">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -191,8 +186,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_LAN_ports">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -204,8 +199,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_RouterOS_License">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -217,8 +212,8 @@
 		<div class="filter-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
 		     id="slider-range_SFP_ports">
 			<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-			<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-			   style="left: 0%;"></a><a href="http://routerboard.com/#"
+			<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+			   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 			                            class="ui-slider-handle ui-state-default ui-corner-all"
 			                            style="left: 100%;"></a></div>
 	</div>
@@ -388,8 +383,8 @@
 			<div id="slider-range_Output_power"
 			     class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
 				<div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div>
-				<a href="http://routerboard.com/#" class="ui-slider-handle ui-state-default ui-corner-all"
-				   style="left: 0%;"></a><a href="http://routerboard.com/#"
+				<a href="http://routerboard.com/products#" class="ui-slider-handle ui-state-default ui-corner-all"
+				   style="left: 0%;"></a><a href="http://routerboard.com/products#"
 				                            class="ui-slider-handle ui-state-default ui-corner-all"
 				                            style="left: 100%;"></a></div>
 		</div>
@@ -470,54 +465,38 @@
 	<a style="clear: both; display: block;" href="http://routerboard.com/compare" onclick="return checkCompare();">Compare
 		selected</a></div>
 </nav>
-<div class="grid_11 omega" id="product_list"><!-- product list here --><h2 id="group_15">Integrated solutions</h2>
-
-	<p class="product_group_description" id="description_group_15">These products are provided complete with cases, power adapters
-		and
-		packaged inside individual product boxes. Ready to use and preconfigured with the most basic functionality so you can
-		plug-in
-		and use.</p>
-
-	<? if (! empty($products)): foreach ($products as $product): ?>
-	<div class="product_box product_title group_class_<? $product['group_id'] ?>" id="<?= $product['product_id'] ?>"><h3><a
-				href="#"
-				id="pname_<?= $product['product_id'] ?>"><?= $product['name'] ?></a></h3><a
-			class="boxlink" href="#">
-			<div class="productBoxImg" id="pbox_img_<?= $product['product_id'] ?>"
-			     style="background:url(<?=ASSETS_URL ?>'img/'<?= $product['url'] ?>) no-repeat;
-				     background-position:<?=$product['position']?>px 0px;
-				     "></div>
-			<div class="product_box_info">
-				<ul>
-					<li><?= $product['info'] ?></li>
-
-				</ul>
-			</div>
-			<span title="recommended price at distributors" class="price_label">$110.00</span></a><img class="compare_icon"
-	                                                                                                   src="<?= ASSETS_URL
-	                                                                                                   ?>img/balance-plus.png"
-	                                                                                                   id="comp_balance_ico_<?= $product['product_id'] ?>"
-	                                                                                                   onclick="setCompareProduct
-		                                                                                                   (<?= $product['product_id'] ?>)"
-	                                                                                                   alt="Compare"
-	                                                                                                   title="Compare"
-	                                                                                                   width="16"
-	                                                                                                   height="16"></div>
-
-</div>
-<?endforeach;
-endif?>
-
-
+<div class="grid_11 omega" id="product_list"><!-- product list here -->
+	<? if (!empty($products)): foreach ($products as $product):?>
+<div class="product_box product_title group_class_<?=$product['group_id']?>" id="box_<?=$product['product_id']?>"><h3><a
+			href="<?=BASE_URL?>view/<?=$product['product_id']?>"
+                                                                          id="pname_<?=$product['product_id']?>"><?=$product['name']?> </a></h3><a
+		class="boxlink" href="<?=BASE_URL?>view/<?=$product['product_id']?>">
+		<div class="productBoxImg" id="pbox_img_<?=$product['product_id']?>"
+		     style="background:url(<?=ASSETS_URL?>img/<?=$product['url']?>) no-repeat;
+			     background-position:<?=$product['position']?>px 0px"></div>
+		<div class="product_box_info">
+			<ul>
+				<li><?=$product['info']?>
+				</li>
+			</ul>
+		</div>
+		<span title="recommended price at distributors" class="price_label">$<?=$product['price']?></span></a><img
+		class="compare_icon"
+                                                                                                   src="<?=ASSETS_URL?>img/balance-plus.png"
+                                                                                                   id="comp_balance_ico_<?=$product['product_id']?>"
+                                                                                                   onclick="setCompareProduct(<?=$product['product_id']?>)"
+                                                                                                   alt="Compare" title="Compare"
+                                                                                                   width="16" height="16"></div>
+<?endforeach; endif?>
+	<!-- END products --> </div>
 </div>
 </div>
-
 </div>
 <div class="wrap-footer">
 	<div class="container_16 footer">
 		<div class="grid_12 alpha">
 			<div style="padding: 15px;"><a href="http://mikrotik.com/"><img id="footer-logo"
-			                                                                src="./RouterBoard.com   Products_files/mtlogo-footer.png"
+			                                                                src="<?=ASSETS_URL?>img/mtlogo-footer.png"
 			                                                                alt="mikrotik" width="100" height="24"></a></div>
 		</div>
 		<div class="grid_4 omega">

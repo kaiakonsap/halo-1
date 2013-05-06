@@ -1,6 +1,6 @@
 RewriteEngine On
 
-RewriteBase /halo/
+RewriteBase /routerboard/
 
 RewriteRule ^(classes) - [F,L]
 
