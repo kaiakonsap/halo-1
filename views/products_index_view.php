@@ -470,14 +470,15 @@
 <div class="product_box product_title group_class_<?=$product['group_id']?>" id="box_<?=$product['product_id']?>"><h3><a
 			href="<?=BASE_URL?>view/<?=$product['product_id']?>"
                                                                           id="pname_<?=$product['product_id']?>"><?=$product['name']?> </a></h3><a
-		class="boxlink" href="<?=BASE_URL?>view/<?=$product['product_id']?>">
+		class="boxlink" href="<?=BASE_URL?>products/view/<?=$product['product_id']?>">
 		<div class="productBoxImg" id="pbox_img_<?=$product['product_id']?>"
 		     style="background:url(<?=ASSETS_URL?>img/<?=$product['url']?>) no-repeat;
 			     background-position:<?=$product['position']?>px 0px"></div>
 		<div class="product_box_info">
-			<ul>
-				<li><?=$product['info']?>
-				</li>
+			<ul><?$info = explode('/', $product['info']);
+				foreach ($info as $key => $val){
+					echo '<li>'.trim($val).'</li>';
+				}?>
 			</ul>
 		</div>
 		<span title="recommended price at distributors" class="price_label">$<?=$product['price']?></span></a><img
@@ -491,18 +492,6 @@
 	<!-- END products --> </div>
 </div>
 </div>
-</div>
-<div class="wrap-footer">
-	<div class="container_16 footer">
-		<div class="grid_12 alpha">
-			<div style="padding: 15px;"><a href="http://mikrotik.com/"><img id="footer-logo"
-			                                                                src="<?=ASSETS_URL?>img/mtlogo-footer.png"
-			                                                                alt="mikrotik" width="100" height="24"></a></div>
-		</div>
-		<div class="grid_4 omega">
-			<div style="padding: 15px;">e-mail: sales@mikrotik.com</div>
-		</div>
-	</div>
 </div>
 <div id="cboxOverlay" style="display: none;"></div>
 <div id="colorbox" class="" style="display: none;">

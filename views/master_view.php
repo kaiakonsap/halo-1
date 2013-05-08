@@ -6,10 +6,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>RouterBoard.com : Products</title>
-	<meta name="description" content="">
+	<title>RouterBoard.com : <?=isset($products['name']) ? $products['name'] : 'Products' ?></title>
 	<meta name="viewport" content="width=device-width">
-
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= ASSETS_URL ?>css/rb_style.min.css" type="text/css" media="screen, projection">
@@ -57,6 +55,18 @@
 	<?php
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>
+</div>
+<div class="wrap-footer">
+	<div class="container_16 footer">
+		<div class="grid_12 alpha">
+			<div style="padding: 15px;"><a href="http://mikrotik.com"><img id="footer-logo"
+			                                                               src="http://img.routerboard.com/mtlogo-footer.png"
+			                                                               alt="mikrotik" width="100" height="24"/></a></div>
+		</div>
+		<div class="grid_4 omega">
+			<div style="padding: 15px;">e-mail: sales@mikrotik.com</div>
+		</div>
+	</div>
 </div>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
