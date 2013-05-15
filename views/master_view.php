@@ -9,10 +9,17 @@
 	<title>RouterBoard.com : <?=isset($products['name']) ? $products['name'] : 'Products' ?></title>
 	<meta name="viewport" content="width=device-width">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<script>BASE_URL = '<?=BASE_URL?>'</script>
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?= ASSETS_URL ?>css/rb_style.min.css" type="text/css" media="screen, projection">
 	<link rel="stylesheet" href="<?= ASSETS_URL ?>css/navbar.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="<?= ASSETS_URL ?>css/jquery.confirm.css" type="text/css">
+	<link rel="Stylesheet" type="text/css" href="<?= ASSETS_URL ?>css/wwselect.css" />
+	<link rel="Stylesheet" type="text/css" href="<?= ASSETS_URL ?>css/bootstrap-fileupload.css" />
+
 	<script src="<?=ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="<?=ASSETS_URL ?>js/bootstrap-fileupload.js"></script>
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
@@ -20,7 +27,7 @@
 
 	<script src="<?=ASSETS_URL?>js/plugins.js"></script>
 	<script src="<?=ASSETS_URL?>js/main.js"></script>
-	<script>BASE_URL = '<?=BASE_URL?>'</script>
+
 
 	<?if(!EMPTY($this->scripts)) : ?>
 		<?foreach($this->scripts as $script) : ?>
@@ -43,7 +50,7 @@
 			</button>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active" id="menu-icon"><a href="<?=BASE_URL?>products">Products</a></li>
+					<li id="menu-icon" class="active"><a href="<?=BASE_URL?>products">Products</a></li>
 					<li id="menu-icon"><a href="#about">How to buy</a></li>
 					<li id="menu-icon"><a href="<?=BASE_URL?>auth/logout">About</a></li>
 				</ul>
@@ -56,7 +63,7 @@
 	require 'views/'.$request->controller.'_'.$request->action.'_view.php';
 	?>
 </div>
-<div class="wrap-footer">
+<div class="wrap-footer" style="width: 100%">
 	<div class="container_16 footer">
 		<div class="grid_12 alpha">
 			<div style="padding: 15px;"><a href="http://mikrotik.com"><img id="footer-logo"

@@ -41,7 +41,7 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset{margin-
 
 /* style.css */
 html,body{margin:0;padding:0;outline:0;height:100%;min-width:960px;}
-body{background:#333 url("http://img.routerboard.com/rb_sprite1.png")/*bg_top*/ repeat-x top left;background-position:0px -10px;}
+body{background:#333 ;background-position:0px -10px;}
 a{color:#719ab1;}
 a.boxlink{text-decoration:none;color:#000;}
 #slider a{color:#fff;}

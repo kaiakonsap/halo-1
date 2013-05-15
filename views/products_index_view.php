@@ -5,7 +5,7 @@
 				<div class="anythingSlider anythingSlider-default activeSlider"
 				     style="width: 940px; height: 280px; display: block; overflow: hidden;">
 					<div class="anythingWindow">
-						<ul id="prduslider" class="anythingBase" style="width: 5640px; left: -4698.351643847267px;">
+						<ul id="prduslider" class="anythingBase" style="width: 5640px; left: -940px;">
 							<li class="cloned panel" style="width: 940px; height: 280px;">
 								<div class="img"><img src="<?= ASSETS_URL ?>img/mtlogo-spot.png" alt="" width="270"
 								                      height="259"></div>

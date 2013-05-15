@@ -15,7 +15,7 @@ class auth {
 			$user_id = get_one("SELECT user_id FROM user WHERE username = '$username' AND password = '$password'");
 			if (! empty($user_id)){
 				$_SESSION['user_id'] = $user_id;
-				$request->redirect('tests');
+				$request->redirect('backend');
 			} //sisuliselt else
 			$errors[] = "Vale kasutajanimi või parool";
 		}
