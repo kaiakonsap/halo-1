@@ -16,10 +16,8 @@
 	<link rel="stylesheet" href="<?= ASSETS_URL ?>css/jquery.confirm.css" type="text/css">
 	<link rel="Stylesheet" type="text/css" href="<?= ASSETS_URL ?>css/wwselect.css" />
 	<link rel="Stylesheet" type="text/css" href="<?= ASSETS_URL ?>css/bootstrap-fileupload.css" />
-
 	<script src="<?=ASSETS_URL ?>js/vendor/modernizr-2.6.2.min.js"></script>
 	<script src="<?=ASSETS_URL ?>js/bootstrap-fileupload.js"></script>
-
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="<?=ASSETS_URL?>js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
