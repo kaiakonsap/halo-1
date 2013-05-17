@@ -12,6 +12,7 @@ class backend
 		$this->scripts[] = 'backend.js';
 		$products = get_all("SELECT * FROM product NATURAL JOIN `group` WHERE deleted=0");
 		$group_names = get_all("SELECT group_name FROM `group` WHERE deleted=0");
+		$result = q("UPDATE product_spec SET cpu_speed=null WHERE product_id=1");
 		require 'views/master_view.php';
 	}
 
@@ -22,6 +23,9 @@ class backend
 			$product_name = $_POST['product_name'];
 			$group_id = $_POST['group_id'];
 			$product_id = q("INSERT INTO product SET name='$product_name', group_id='$group_id'");
+			$product_id_image = q("INSERT INTO image SET product_id='$product_id'");
+			$product_id_more_info = q("INSERT INTO product_more_info SET product_id='$product_id'");
+			$product_id_spec = q("INSERT INTO product_spec SET product_id='$product_id'");
 			echo $product_id > 0 ? $product_id : $product_id;
 			exit();
 		}
@@ -35,7 +39,9 @@ class backend
 		$product_info = get_all(
 			"SELECT * FROM product NATURAL JOIN `group` NATURAL JOIN product_more_info NATURAL JOIN image WHERE product_id='$product_id'"
 		);
+		if (! empty($product_info)) {
 		$product_info = $product_info[0];
+		}
 		$specs = get_all("SELECT * FROM product_spec WHERE product_id='$product_id'");
 
 		if (! empty($specs)) {
@@ -69,8 +75,14 @@ class backend
 	{
 		global $request;
 		$id = $request->params[0];
-		$id=strtolower(str_replace(' ', '_','$id'));
-		$result = q("UPDATE product SET deleted=1 WHERE product_id='$id'");
+		if (isset($_POST)){
+			$product_id = $_POST['id'];
+			$product_id = strtolower(str_replace(' ', '_', $product_id));
+		}
+		$result = q("UPDATE product_spec SET $product_id=null WHERE product_id='$id'");
+		if ($result==0){
+			$result = 1;
+		}
 		require 'views/master_view.php';
 	}
 }
